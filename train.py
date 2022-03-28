@@ -18,8 +18,8 @@ def train_model(params):
     train_val_ratio = params['train_val_ratio']
     early_stopping = params['baseline_val_loss']
 
-    data = np.expand_dims(np.load(os.path.join(path, 'train_data.npy')), 1)
-    label = np.load(os.path.join(path, 'train_label.npy'))
+    data = np.expand_dims(np.load(os.path.join(path, 'train_imgs.npy')), 1)
+    label = np.load(os.path.join(path, 'train_labels.npy'))
 
     train_loader, val_loader = prepare_input_img(data, label, train_val_ratio, batch_size)
     num_total_batch, str_total_batch, str_epochs = check_length(train_loader, num_epochs)
